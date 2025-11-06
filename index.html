@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TechX</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.svg">
+  <script src="https://kit.fontawesome.com/88e37bff79.js" crossorigin="anonymous"></script>
+
+  <!-- ✅ Inline stylesheet for index.html -->
+  <style>
+    :root {
+      --primary: #223d0de6;
+      --accent: #9fe870;
+      --light: #ffffff;
+      --dark: #000000;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #000;
+    }
+
+    /* Header & Navigation */
+    header { background: var(--light); padding: 10px 40px; }
+    .nav-header { display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo img { height: 90px; }
+    .nav-list a {
+      text-decoration: none; color: var(--dark); margin: 0 15px; font-weight: 500;
+    }
+    .nav-list a.active, .nav-list a:hover {
+      color: var(--primary); border-bottom: 2px solid var(--primary);
+    }
+
+    /* Hero Section */
+    .header-content {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 60px 80px; background: #f5f5f5;
+    }
+    .header-content h1 {
+      font-size: 2rem; color: var(--primary); margin-bottom: 15px;
+    }
+    .header-content p { font-size: 1rem; margin-bottom: 25px; line-height: 1.6; }
+    .primary {
+      background: var(--accent); padding: 10px 25px; color: var(--dark);
+      border-radius: 5px; text-decoration: none; font-weight: 600; transition: 0.3s;
+    }
+    .primary:hover { background: var(--primary); color: var(--light); }
+    .rightBox img { width: 420px; max-width: 100%; }
+
+    /* Services */
+    .product_preview_parent { padding: 50px 80px; text-align: center; }
+    .product_preview_parent h2 { color: var(--primary); margin-bottom: 40px; }
+    .product_item_parent {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;
+    }
+    .product_preview { text-align: center; }
+    .product_preview img {
+      border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .product_preview h3 { margin-top: 15px; font-size: 1rem; }
+
+    /* Who We Are */
+    .sec2 { padding: 60px 80px; background: #f9f9f9; }
+    .section2 h3 { color: var(--accent); }
+    .section2 h2 { color: var(--primary); margin-bottom: 30px; }
+    .section2 .parent { display: flex; gap: 30px; align-items: center; }
+    .section2 img { width: 100%; border-radius: 10px; }
+    .section2 ul { list-style: none; margin-bottom: 20px; }
+    .section2 li h3 { color: var(--primary); margin-bottom: 5px; }
+
+    /* Join Us */
+    .com { background: var(--primary); color: var(--light); padding: 60px 80px; }
+    .component { display: flex; justify-content: space-between; align-items: center; }
+    .button-component-content {
+      background: var(--accent); padding: 10px 25px; border-radius: 5px;
+      color: var(--dark); text-decoration: none; font-weight: bold;
+    }
+    .button-component-content:hover { background: var(--light); }
+
+    /* Why Us */
+    .sec4 { padding: 60px 80px; text-align: center; }
+    .section4-content h2 { color: var(--primary); margin-bottom: 10px; }
+    .section4-parent {
+      display: flex; gap: 30px; justify-content: center; margin-top: 30px;
+    }
+    .section4-parent .item { flex: 1; max-width: 400px; }
+
+    /* Contact Us */
+    .contact_us {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding: 60px 80px; background: #f5f5f5;
+    }
+    .contact_us_content h2 { color: var(--primary); margin-bottom: 10px; }
+    form {
+      background: #fff; padding: 25px; border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .form_input, .input { margin-bottom: 15px; display: flex; flex-direction: column; }
+    input, select, textarea {
+      border: 1px solid #ccc; border-radius: 8px; padding: 8px 12px; font-size: 1rem;
+    }
+    button.primary {
+      background: var(--accent); border: none; padding: 10px 20px;
+      font-weight: 600; border-radius: 5px; cursor: pointer;
+    }
+    button.primary:hover { background: var(--primary); color: var(--light); }
+
+    /* Footer */
+    footer {
+      background: #222; color: #fff; text-align: center; padding: 40px 20px;
+    }
+    footer h2 { color: var(--accent); margin-bottom: 15px; }
+    footer ul { list-style: none; padding: 0; }
+    footer ul li { margin: 5px 0; }
+    footer a { color: #fff; text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+    .social-icon a { color: #fff; margin: 0 10px; font-size: 1.3rem; }
+    .social-icon a:hover { color: var(--accent); }
+    hr { border: 0.5px solid #444; margin: 20px 0; }
+    .copyright { font-size: 0.9rem; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content, .section2 .parent, .component, .contact_us, .section4-parent {
+        flex-direction: column; text-align: center;
+      }
+      .header-content img, .section2 img { width: 100%; }
+      .nav-list { display: flex; flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="container banner">
+    <header>
+      <nav class="res-row nav-header">
+        <div class="col-lg-3 nav-logo">
+          <img src="../images/logo.png" height="90px" alt="Company_logo"/>
+        </div>
+        <div class="col-lg-9 nav-list">
+          <a class="active" href="index.html">Home</a>
+          <a href="jobs.html">Jobs</a>
+          <a href="apply.html">Apply</a>
+          <a href="about.html">About</a>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <section>
+    <!-- Hero -->
+    <div class="header-content">
+      <div class="leftBox">
+        <h1>Your one-stop solution for innovative tech careers.</h1>
+        <p>A leading technology solutions provider committed to driving innovation in IT services and digital design. At TechX, we combine technical expertise with creativity to deliver outstanding results for our clients across multiple industries.</p>
+        <a class="primary" href="jobs.html">Find out more</a>
+      </div>
+      <div class="rightBox">
+        <img src="../images/cover.png" alt="cover_page">
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="product_preview_parent">
+      <h2>Services Available</h2>
+      <div class="product_item_parent">
+        <div class="product_preview">
+          <img src="../images/IT Support & Maintenance.jpg" width="250" height="250" alt="It_support"/>
+          <h3>IT Support & Maintenance</h3>
+        </div>
+        <div class="product_preview">
+          <img src="../images/UIUX Design & Web Development.jpg" width="250" height="250" alt="UI_UX"/>
+          <h3>UI/UX Design & Web Development</h3>
+        </div>
+        <div class="product_preview">
+          <img src="../images/Cloud Solutions & Cybersecurity.jpg" width="250" height="250" alt="Cloud_Data"/>
+          <h3>Cloud Solutions & Cybersecurity</h3>
+        </div>
+        <div class="product_preview">
+          <img src="../images/IT Consultancy & Training.jpg" width="250" height="250" alt="IT_consultancy"/>
+          <h3>IT Consultancy & Training</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Who We Are -->
+    <div class="container sec2">
+      <div class="section2">
+        <h3>Who We Are</h3>
+        <h2>More than a tech company, we are a team of innovators.</h2>
+        <div class="parent">
+          <div class="feature-1-img">
+            <img src="../images/Tech company.jpg" alt="Product">
+          </div>
+          <div class="content">
+            <ul>
+              <li>
+                <h3>Our Vision</h3>
+                <p>We envision a world where every innovative idea has the right team to bring it to life, and every skilled professional has the opportunity to make a lasting impact.</p>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <h3>Our Value</h3>
+                <p>We are committed to providing high-quality IT services that make your experience impactful and memorable.</p>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <h3>Our Core Values</h3>
+                <ul>
+                  <li><strong>Innovation:</strong> We embrace new ideas and technologies.</li>
+                  <li><strong>Integrity:</strong> We operate with honesty and transparency.</li>
+                  <li><strong>Community:</strong> We build lasting relationships and support our network.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Join Us -->
+    <div class="container com">
+      <div class="component">
+        <div class="component-content">
+          <h4 class="white">Ready to Join with Us</h4>
+          <p>Be part of TechX — where your skills create impact, your ideas spark innovation, and your career shapes tomorrow.</p>
+          <div><a class="button-component-content" href="apply.html">Apply Now</a></div>
+        </div>
+        <div class="img_component">
+          <img src="../images/apply now.png" width="250" height="250" alt="Apply Now">
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Us -->
+    <div class="container sec4">
+      <div class="section4">
+        <div class="section4-content">
+          <h2>Why Us?</h2>
+          <p>Discover the Innovation That Drives Your Success</p>
+        </div>
+        <div class="section4-parent">
+          <div class="item">
+            <p>TechX is more than just an IT service provider — we’re your trusted partner in growth.</p>
+          </div>
+          <div class="item">
+            <p>We combine innovation, integrity, and community to create meaningful impact and long-term success.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Us -->
+    <div class="container contact_us">
+      <div class="contact_us_content">
+        <h2>Contact Us</h2>
+        <h1>Say Hey!✌️</h1>
+        <p>Got questions about our IT services or need support? The TechX team is here to help.</p>
+      </div>
+      <div class="form">
+        <form action="#">
+          <div class="form_input">
+            <label for="name">Name:</label>
+            <input id="name" type="text" placeholder="Enter Your Name" required>
+          </div>
+          <div class="form_input">
+            <label for="email">Email:</label>
+            <input id="email" type="email" placeholder="Email" required>
+          </div>
+          <div class="input">
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+              <option selected disabled>Choose Your Country</option>
+              <option value="Myanmar">Myanmar 🇲🇲</option>
+              <option value="Thailand">Thailand 🇹🇭</option>
+              <option value="Singapore">Singapore 🇸🇬</option>
+              <option value="China">China 🇨🇳</option>
+              <option value="India">India 🇮🇳</option>
+              <option value="Malaysia">Malaysia 🇲🇾</option>
+            </select>
+          </div>
+          <div class="input message-box">
+            <label for="description">Description:</label>
+            <textarea id="description" placeholder="Description" required></textarea>
+          </div>
+          <button class="primary">Send Here</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="container">
+    <div class="row">
+      <div class="col">
+        <img src="../images/logo_small.png" width="143" height="140" alt="TechX small logo" />
+      </div>
+      <div class="col">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="apply.html">Apply</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="social-icon">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <hr>
+    <p class="copyright">© 2025 TechX Group – All Rights Reserved</p>
+    <p class="copyright">
+      <a href="https://12housew.atlassian.net/jira/software/projects/GROUP5/boards/34" target="_blank">Jira Project</a>
+    </p>
+    <p class="copyright">
+      <a href="https://github.com/YatiMoe/Project-Part-1_TechX_Group5.git" target="_new">GitHub</a>
+    </p>
+  </footer>
+</body>
+</html>
